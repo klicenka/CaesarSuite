@@ -89,7 +89,7 @@ namespace Caesar
             SystemParam = CaesarReader.ReadBitflagInt16(ref bitflags, reader, -1);
             DumpMode = CaesarReader.ReadBitflagInt16(ref bitflags, reader);
             DumpSize = CaesarReader.ReadBitflagInt32(ref bitflags, reader);
-            IsConstant = (DumpMode & 0xF00) == 0x300;
+            IsConstant = (ModeConfig & 0xF00) == 0x300;
             if (DumpMode == 5) 
             {
                 // dump is actually a string, use
@@ -355,6 +355,10 @@ namespace Caesar
             }
             */
             return resultBitSize;
+        }
+
+        public String GetName() {
+            return Language.GetString(Name_CTF);
         }
 
         public void PrintDebug()

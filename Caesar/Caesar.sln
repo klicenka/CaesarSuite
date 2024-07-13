@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trafo", "Trafo\Trafo.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diogenes", "Diogenes\Diogenes.csproj", "{2216DB99-EAAC-46A8-B99A-28D659907DE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossCaesar", "CrossCaesar\CrossCaesar.csproj", "{AF2CA362-34A8-4B0C-B323-B4D86B5E4479}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2216DB99-EAAC-46A8-B99A-28D659907DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2216DB99-EAAC-46A8-B99A-28D659907DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2216DB99-EAAC-46A8-B99A-28D659907DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF2CA362-34A8-4B0C-B323-B4D86B5E4479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF2CA362-34A8-4B0C-B323-B4D86B5E4479}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF2CA362-34A8-4B0C-B323-B4D86B5E4479}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF2CA362-34A8-4B0C-B323-B4D86B5E4479}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

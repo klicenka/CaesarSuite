@@ -15,7 +15,8 @@ namespace Trafo
         {
 
 #if DEBUG
-            string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\VGSNAG2.CBF";
+            //string path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + @"\VGSNAG2.CBF";
+            string path = @"/Users/alandragomirecky/Projects/vozy/klicenka/kline/cbfs/meg.cbf";
 #else
             if (args.Length == 0)
             {
@@ -33,7 +34,7 @@ namespace Trafo
             byte[] cbfBytes = File.ReadAllBytes(path);
 
             CaesarContainer container = new CaesarContainer(cbfBytes);
-
+            
             List<object> ecuList = new List<object>();
             foreach (ECU ecu in container.CaesarECUs) 
             {

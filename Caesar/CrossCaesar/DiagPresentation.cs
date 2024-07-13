@@ -159,9 +159,8 @@ namespace Caesar
 
         public string InterpretData(byte[] inBytes, DiagPreparation inPreparation, bool describe = true)
         {
-           
             // might be relevant: DMPrepareSingleDatum, DMPresentSingleDatum
-
+            
             bool isDebugBuild = false;
 #if DEBUG
             isDebugBuild = true;
@@ -184,6 +183,7 @@ namespace Caesar
             {
                 return $"InBytes [{BitUtility.BytesToHex(workingBytes)}] length mismatch (expecting {TypeLength_1A})";
             }
+
 
             // handle booleans first since they're the edge case where they can cross byte boundaries
             if (inPreparation.SizeInBits == 1)
@@ -213,6 +213,7 @@ namespace Caesar
 
             string humanReadableType = $"UnhandledType:{dataType}";
             string parsedValue = BitUtility.BytesToHex(workingBytes, true);
+         
             if (dataType == 20)
             {
                 // parse as a regular int (BE)
@@ -248,7 +249,7 @@ namespace Caesar
                 // these values are tagged with an exclamation [!] i (jglim) am not sure if they will work correctly yet
                 // specifically, i am not sure if the big endian float parsing is done correctly
                 uint rawUIntInterpretation = 0;
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < TypeLength_1A; i++)
                 {
                     rawUIntInterpretation <<= 8;
                     rawUIntInterpretation |= workingBytes[i];

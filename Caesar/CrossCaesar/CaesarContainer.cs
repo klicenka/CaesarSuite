@@ -24,7 +24,7 @@ namespace Caesar
 
         // fixup serialization/deserialization:
         // language strings should be properties; resolve to actual string only when called
-        public CaesarContainer(byte[] fileBytes)
+        public CaesarContainer(byte[] fileBytes, List<String>? translation = null)
         {
             Stopwatch sw = new Stopwatch();
             sw.Start();
@@ -46,6 +46,12 @@ namespace Caesar
                 ReadCFFDefinition(reader);
                 // language is the highest priority since all our strings come from it
                 ReadCTF(reader);
+                // apply translation
+                if (translation is List<String> t) {
+                    CaesarCTFHeader.CtfLanguages[0].TranslationEntries = t;
+                }
+                
+
                 ReadECU(reader);
             }
 
